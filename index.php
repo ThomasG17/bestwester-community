@@ -1,4 +1,5 @@
 <?php
+    //Test commit Amélie
     session_start();
 
     //Auto-load des elements de base
