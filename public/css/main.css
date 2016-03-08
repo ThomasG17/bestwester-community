@@ -106,58 +106,17 @@ ul {
 
 
 
+@media screen and (max-width:500px) {
+    #header {
+        background: #003d7e;
+        width: 100px;
+    }
 
-/* Smartphones (portrait et paysage) ----------- */
-@media only screen
-and (min-width : 320px)
-and (max-width : 480px) {
-	body {
-		background: yellow;
-	}
-}
-/* Smartphones (paysage) ----------- */
-@media only screen
-and (min-width : 321px) {
-/* vos définitions */
-}
-/* Smartphones (portrait) ----------- */
-@media only screen
-and (max-width : 320px) {
-/* vos définitions */
-}
-/* iPad (portrait et paysage) ----------- */
-@media only screen
-and (min-width : 768px)
-and (max-width : 1024px) {
-/* vos définitions */
-}
-/* iPad (paysage) ----------- */
-@media only screen
-and (min-width : 768px)
-and (max-width : 1024px)
-and (orientation : landscape) {
-/* vos définitions */
-}
-/* iPad (portrait) ----------- */
-@media only screen
-and (min-width : 768px)
-and (max-width : 1024px)
-and (orientation : portrait) {
-/* vos définitions */
-}
-/* Bureau and portable ----------- */
-@media only screen
-and (min-width : 1224px) {
-/* vos définitions */
-}
-/* Écrans larges ----------- */
-@media only screen
-and (min-width : 1824px) {
-/* vos définitions */
-}
-/* iPhone 4 et suivants (Retina) ----------- */
-@media
-only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {
-/* vos définitions */
+    #header .header-brand {
+    	height: 55px;
+    }
+
+    #header .user-informations {
+    	display: none;
+    }
 }
