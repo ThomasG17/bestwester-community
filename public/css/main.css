@@ -35,7 +35,7 @@ ul {
 	padding: 0;
 }
 
-/* Header */
+/*     H E A D E R    */
 #header {
 	background: rgba(100, 100, 100, 0.8);
 	width: 300px;
@@ -105,7 +105,6 @@ ul {
 }
 
 
-
 @media screen and (max-width:500px) {
     #header {
         background: #003d7e;
@@ -119,4 +118,8 @@ ul {
     #header .user-informations {
     	display: none;
     }
+	
+	#content {
+		padding-left:300px;
+	}
 }
