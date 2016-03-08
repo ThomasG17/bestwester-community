@@ -1,57 +1,19 @@
-<?php
-class Routing{
+<?php 
+class routing{
 
-	private static $routes = [];
-	private static $namedRoutes = [];
 
-	//Regroupement des routes dans les methodes GET et POST dans la fonction add
-	public static function get($path, $callable) {
-		return self::add('GET', $path, $callable);
+	public static function getRouting()
+	{
+		$uri = $_SERVER['REQUEST_URI'];
+		$array_uri = explode("/", trim($uri, "/"));
+		$controller = empty($array_uri[0])?"index":$array_uri[0];
+		unset($array_uri[0]);
+		$action = empty($array_uri[1])?"index":$array_uri[1];
+		unset($array_uri[1]);
+		$args = array_merge($array_uri, $_POST);
+
+		return ["c" => $controller, "a" => $action, "args" => $args];
 	}
 
-	public static function post($path, $callable) {
-		return self::add('POST', $path, $callable);
-	}
-
-	//on enregistre la routes et le noms de la routes dans leur tableau correspondant
-	private static function add($method, $path, $callable) {
-		$route = new Route($path, $callable);
-		self::$routes[$method][] = $route;
-
-		$name = str_replace('@', '.', strtolower($callable));
-		self::$namedRoutes[$name] = $route;
-
-		return $route;
-	}
-
-	//Si l'url existe on appelle call() sinon exception
-	public static function parse($url) {
-		$method = $_SERVER['REQUEST_METHOD'];
-		// die(var_dump($method));
-
-		if ( !isset(self::$routes[$method]) ) {
-			throw new Exception('No routes with this request method');
-		}
-
-		foreach (self::$routes[$method] as $route) {
-
-			if ($route->match($url)) {
-				return $route->call();
-			}
-		}
-//		throw new Exception('No routes found');
-	}
-
-	/*	Générateur d'url
-	Exemple (sans paramètre): Routing::url('Exampleuser.index'); => /Exampleuser
-	Exemple (avec paramètre): Routing::url('Exampleuser.show', ['id' => 1, 'name' => 'dupont']); => /Exampleuser/1-dupont
-	*/
-	public static function url($name, $params = []) {
-		if (!isset(self::$namedRoutes[$name])) {
-			throw new RouterException('No route matches this name');
-		}
-
-		return '/'.self::$namedRoutes[$name]->getUrl($params);
-	}
 
 }

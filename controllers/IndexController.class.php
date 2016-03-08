@@ -1,9 +1,9 @@
 <?php
-class indexController extends baseView {
-	
+class indexController{
 
-	public function index()
-	{
-		$this->render("indexIndex");
-	}
+	public function indexAction($args){
+		$v = new view("indexIndex");
+		$v->assign("mesargs", $args);
+	}	
+
 }
