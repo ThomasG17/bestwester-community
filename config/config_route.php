@@ -16,5 +16,3 @@ $url = (isset($_GET['url'])) ? $_GET['url'] : '/';
 
 //Traitement de l'url
 $router->parse($url);
-
-$router->get('/testuser', 'TestUser@index');
