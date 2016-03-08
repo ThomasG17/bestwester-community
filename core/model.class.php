@@ -6,7 +6,7 @@ class model{
 
 	public function __construct(){
 		try{
-			$this->pdo = new PDO("mysql:dbname=mabdd;host=localhost","root","root");
+			$this->pdo = new PDO("mysql:dbname=hackathon;host=localhost","root","root");
 			$this->table = get_called_class();
 		}catch(Exception $e){
 			die();

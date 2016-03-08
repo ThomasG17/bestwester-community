@@ -16,10 +16,7 @@
 </head>
 
 <body>
-
-    <div class="container-fluid">
-
-        <div id="header">
+    <header id="header">
             <div class="header-brand"></div>
             <div class="user-informations">
                 <p class="name">Nom prénom</p>
@@ -38,9 +35,15 @@
                     <li><a href="javascript:void(0);" title="Événements">Événements</a></li>
                 </ul>
             </nav>
-        </div>
+    </header>
 
-		<?php include $this->view;?>
+    <div id="content">
+        <div class="container-fluid">
+
+
+
+    		<?php include $this->view;?>
+        </div>
 
     </div>
     

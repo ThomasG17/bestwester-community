@@ -35,7 +35,7 @@ ul {
 	padding: 0;
 }
 
-/* Header */
+/*     H E A D E R    */
 #header {
 	background: rgba(100, 100, 100, 0.8);
 	width: 300px;
@@ -102,6 +102,14 @@ ul {
 	text-align: center;
 	display: block;
 	color: #fff;
+}
+
+
+
+/*     V I E W    #CONTENT     */
+
+#content {
+	padding-left:300px;
 }
 
 
