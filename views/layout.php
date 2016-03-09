@@ -1,3 +1,15 @@
+<?php
+    if(isset($_SESSION['login_user'])){
+        //header("location: index.php");
+    }else{
+        var_dump("Non");
+    }
+?>
+<?php var_dump($_SESSION) ?>
+<?php var_dump($_SESSION['login_user']) ?>
+<?php var_dump($_SESSION['firstname']) ?>
+<?php var_dump($_SESSION['lastname']) ?>
+<?php var_dump($_SESSION['job']) ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,27 +28,29 @@
 </head>
 
 <body>
-    <header id="header">
-            <div class="header-brand"></div>
-            <div class="user-informations">
-                <p class="name">Nom prénom</p>
-                <p class="statut">Fonction</p>
-                <div class="hostel">
-                    <p class="hostel-name">Hôtel Marais Bastille</p>
-                    <p class="hostel-adress">36 Bd Richard Lenoir <br /> 75011 Paris</p>
+    <?php
+    if(isset($_SESSION['login_user'])){ ?>
+        <header id="header">
+                <div class="header-brand"></div>
+                <div class="user-informations">
+                    <p class="name">Nom prénom</p>
+                    <p class="statut">Fonction</p>
+                    <div class="hostel">
+                        <p class="hostel-name">Hôtel Marais Bastille</p>
+                        <p class="hostel-adress">36 Bd Richard Lenoir <br /> 75011 Paris</p>
+                    </div>
                 </div>
-            </div>
 
-            <nav id="main-nav">
-                <ul>
-                    <li><a href="javascript:void(0);" title="Accueil">Accueil</a></li>
-                    <li><a href="javascript:void(0);" title="Messagerie">Messagerie</a></li>
-                    <li><a href="javascript:void(0);" title="Planning">Planning</a></li>
-                    <li><a href="javascript:void(0);" title="Événements">Événements</a></li>
-                </ul>
-            </nav>
-    </header>
-
+                <nav id="main-nav">
+                    <ul>
+                        <li><a href="javascript:void(0);" title="Accueil">Accueil</a></li>
+                        <li><a href="javascript:void(0);" title="Messagerie">Messagerie</a></li>
+                        <li><a href="javascript:void(0);" title="Planning">Planning</a></li>
+                        <li><a href="javascript:void(0);" title="Événements">Événements</a></li>
+                    </ul>
+                </nav>
+        </header>
+    <?php } ?>
     <div id="content">
         <div class="container-fluid">
 

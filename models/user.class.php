@@ -16,4 +16,8 @@ class user extends model{
 		$this->surname=$surname;	
 	}
 
+	public function getUser($email, $password){
+	}
+
+
 }
