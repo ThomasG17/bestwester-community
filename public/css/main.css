@@ -91,6 +91,13 @@ input:focus {
 	margin-top: 10px;
 }
 
+#header .user-informations .logout {
+	margin-top: 10px;
+	background-color: #003d7e;
+	color: #fff;
+	border: none;
+}
+
 #header #main-nav,
 #header #responsive-main-nav {
 	margin-top: 40px;
@@ -141,14 +148,35 @@ input:focus {
 }
 
 .content #search {
-	margin: 20px 30px 0 0;
+	margin: 20px 30px 100px 0;
 }
 
 .content #search input {
 	float: right;
-	background: transparent;
+	background: #fff;
 	border: 1px solid #fff;
-	color: #fff;
+	color: #000;
 	padding: 2px 5px;
+}
+
+.content #languages {
+	margin-top: 23px;
+}
+
+.content #languages .france {
+	background: url("../../public/images/france.jpg") 0 0 no-repeat;
+	background-size: 100%;
+	text-indent: -9999px;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+}
+
+.content #languages .england {
+	background: url("../../public/images/england.jpg") 0 0 no-repeat;
+	background-size: 100%;
+	text-indent: -9999px;
+	width: 20px;
+	height: 20px;
 }
 

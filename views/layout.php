@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="/public/css/login.css">
     <?php } ?>
 
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Montserrat' type='text/css'>
     <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Quicksand' type='text/css'>
@@ -34,7 +34,7 @@
             <div class="user-informations">
                 <p class="name"><?php echo $_SESSION['login_user']['firstname'] ?> <?php echo $_SESSION['login_user']['lastname'] ?></p>
                 <p class="statut"><?php echo $_SESSION['login_user']['fonction'] ?></p>
-                <a href="/user/logout" class="btn btn-default">logout</a>
+                <a href="/user/logout" class="logout btn btn-default">Déconnexion</a>
                 <div class="hostel">
                     <p class="hostel-name">Hôtel Marais Bastille</p>
                     <p class="hostel-adress">36 Bd Richard Lenoir <br /> 75011 Paris</p>
@@ -63,9 +63,15 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <form method="search" id="search">
+                <form method="search" id="search" class="col-md-9">
                     <input type="search" placeholder="Recherche" name="the_search">
                 </form>
+                <div id="languages">
+                    <a href="/index" title="Version française"><span class="france col-md-1">France</span></a>
+                    <a href="/index?lang=en"><span class="england col-md-1">England</span></a>
+                </div>
+            </div>
+            <div class="row">
         		<?php include $this->view;?>
             </div>
         </div>
