@@ -186,8 +186,8 @@ class basesql {
 	}
 
 	// Cette méthode permet de retourner le concours sélectionné
-	public function getOneContest($selected_contest = "Concours Oasis", $column = "title") {
-		$sql =  "SELECT * FROM ".$this->table." WHERE ".$column." = '".$selected_contest."'";
+	public function getUserLogin($email, $password) {
+		$sql =  "SELECT * FROM user WHERE mail = '".$email."' AND password = '".$password."'";
 		$query = $this->pdo->prepare($sql);
 		$query->execute();
 		$data = $query->fetch();
