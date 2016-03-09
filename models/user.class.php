@@ -1,22 +1,20 @@
 <?php
 class user extends model{
 	
-	protected $name;
-	protected $surname;
+
 
 	public function __construct(){
 		parent::__construct();
 	}
 
-	public function setName($name){
-		$this->name=$name;
-	}
+	public function login($email, $password){
+		$user = $this->getUserLogin($email, $password);
 
-	public function setSurname($surname){
-		$this->surname=$surname;	
-	}
-
-	public function getUser($email, $password){
+		if(!empty($user)){
+			return $user;
+		}else{
+			return false;
+		}
 	}
 
 

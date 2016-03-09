@@ -1,15 +1,3 @@
-<?php
-    if(isset($_SESSION['login_user'])){
-        //header("location: index.php");
-    }else{
-        var_dump("Non");
-    }
-?>
-<?php var_dump($_SESSION) ?>
-<?php var_dump($_SESSION['login_user']) ?>
-<?php var_dump($_SESSION['firstname']) ?>
-<?php var_dump($_SESSION['lastname']) ?>
-<?php var_dump($_SESSION['job']) ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,9 +10,12 @@
     <link rel="stylesheet" href="/public/css/main.css">
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="/public/css/tpl/home.css">
+    <?php if(!isset($_SESSION['login_user'])){ ?>
+        <link rel="stylesheet" href="/public/css/login.css">
+    <?php } ?>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Montserrat' type='text/css'>
     <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Quicksand' type='text/css'>
 
@@ -37,8 +28,9 @@
         <header id="header">
                 <div class="header-brand"></div>
                 <div class="user-informations">
-                    <p class="name">Nom prénom</p>
-                    <p class="statut">Fonction</p>
+                    <p class="name"><?php echo $_SESSION['login_user']['firstname'] ?> <?php echo $_SESSION['login_user']['lastname'] ?></p>
+                    <p class="statut"><?php echo $_SESSION['login_user']['fonction'] ?></p>
+                    <a href="/user/logout" class="btn btn-default">logout</a>
                     <div class="hostel">
                         <p class="hostel-name">Hôtel Marais Bastille</p>
                         <p class="hostel-adress">36 Bd Richard Lenoir <br /> 75011 Paris</p>
@@ -54,18 +46,25 @@
                     </ul>
                 </nav>
         </header>
-    <?php } ?>
+    
 
-    <div id="contenu">
-        <div class="container-fluid">
-            <div class="row">
-                <form method="search" id="search">
-                    <input type="search" placeholder="Recherche" name="the_search">
-                </form>
+        <div id="contenu">
+            <div class="container-fluid">
+                <div class="row">
+                    <form method="search" id="search">
+                        <input type="search" placeholder="Recherche" name="the_search">
+                    </form>
+                </div>
+        		<?php include $this->view;?>
             </div>
-    		<?php include $this->view;?>
         </div>
-    </div>
+    <?php }else{ ?>
+        <div id="contenu">
+            <div class="container-fluid">
+                <?php include $this->view;?>
+            </div>
+        </div>
+    <?php } ?>
     
     <script src="/public/js/jquery-2.1.3.min.js"></script>
     <script src="/public/js/bootstrap.min.js"></script>
