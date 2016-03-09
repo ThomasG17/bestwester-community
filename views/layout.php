@@ -66,32 +66,6 @@
                 <form method="search" id="search">
                     <input type="search" placeholder="Recherche" name="the_search">
                 </form>
-
-                <nav id="main-nav">
-                    <ul>
-                        <li><a href="javascript:void(0);" title="Accueil">Accueil</a></li>
-                        <li><a href="javascript:void(0);" title="Messagerie">Messagerie</a></li>
-                        <li><a href="javascript:void(0);" title="Planning">Planning</a></li>
-                        <li><a href="javascript:void(0);" title="Événements">Événements</a></li>
-                    </ul>
-                </nav>
-                <nav id="responsive-main-nav">
-                <ul>
-                    <li><a href="javascript:void(0);" title="Accueil"><i class="fa fa-home"></i></a></li>
-                    <li><a href="javascript:void(0);" title="Messagerie"><i class="fa fa-envelope"></i></a></li>
-                    <li><a href="javascript:void(0);" title="Planning"><i class="fa fa-calendar"></i></a></li>
-                    <li><a href="javascript:void(0);" title="Planning"><i class="fa fa-bed"></i></a></li>
-                </ul>
-            </nav>
-        </header>    
-
-        <div id="contenu">
-            <div class="container-fluid">
-                <div class="row">
-                    <form method="search" id="search">
-                        <input type="search" placeholder="Recherche" name="the_search">
-                    </form>
-                </div>
         		<?php include $this->view;?>
             </div>
         </div>
