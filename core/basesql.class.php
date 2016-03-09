@@ -47,8 +47,8 @@ class basesql {
 		} else {
 			// "Insert";
 			unset($child_vars[0]);
-			$sql = "INSERT INTO ".$this->table." 
-					( " . implode(",", $child_vars) . ") 
+			$sql = "INSERT INTO `".$this->table."`
+					( " . implode(",", $child_vars) . ")
 					VALUES ( :" . implode(",:", $child_vars) . ");";
 					echo $sql;
 			$query = $this->pdo->prepare($sql);
@@ -89,7 +89,7 @@ class basesql {
 
 	// Cette méthode retourne l'objet correspondant à l'ID passé en paramètre
 	public function getOneBy($value, $column = "id"){
-		$sql = "SELECT * FROM ".$this->table." WHERE ".$column."=:".$column." limit 1";
+		$sql = "SELECT * FROM `".$this->table."` WHERE `".$column."`=:".$column." limit 1";
 		$query = $this->pdo->prepare($sql);
 		$query->execute([$column=>$value]);
 		//On précise que dans le retour j'aurai un format [id=1, name=skrzypczyk] ....
@@ -105,6 +105,7 @@ class basesql {
 			    $this->$propName = $propValue;
 			}
 		}
+		return $data;
 	}
 
 	// Cette méthode retourne l'objet correspondant à l'id_member (de facebook) passé en paramètre
@@ -129,7 +130,7 @@ class basesql {
 
 	// cette méthode retourne l'ensemble des objets contenu de la table qui l'appel
 	public function getAll($value){
-		$sql = "SELECT * FROM ".$this->table;
+		$sql = "SELECT * FROM `".$this->table."`";
 		$query = $this->pdo->prepare($sql);
 		$query->execute();
 		$query->setFetchMode(PDO::FETCH_ASSOC);
@@ -144,6 +145,7 @@ class basesql {
 			    $this->$propName = $propValue;
 			}
 		}
+		return ($data);
 	}
 
 	// cette méthode retourne le concours active 
