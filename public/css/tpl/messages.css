@@ -1,16 +1,40 @@
 #mail-box {
 	color: #000;
-	margin: 40px 0;
 }
 
-#mail-box .message {
+#mail-box .messages-header {
+	overflow: auto;
+}
+
+#mail-box .messages-header h3 {
+	font-family: 'Quicksand', Arial, sans-serif;
+	font-weight: bold;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+#mail-box .messages-header .trash {
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+}
+
+#mail-box .box-content {
+	background-color: #fff;
+	margin-top: 20px;
+	margin-bottom: 40px;
+	clear: both;
+}
+
+#mail-box .box-content .message {
 	border-bottom: 1px solid #ccc;
 	padding: 15px;
 	overflow: auto;
     font-style: normal;
 }
 
-#mail-box .message .mail-open {
+#mail-box .box-content .message .mail-open {
 	background: url("/public/images/enveloppe-msg.png") 0 0 no-repeat;
 	display: block;
 	background-size: 100%;
@@ -19,7 +43,7 @@
 	width: 30px;
 }
 
-#mail-box .message .from {
+#mail-box .box-content .message .from {
 	font-family: 'Quicksand', Arial, sans-serif;
 	color: #999;
 	font-size: 12px;
@@ -27,7 +51,11 @@
     font-style: normal;
 }
 
-#mail-box #today,
-#mail-box #previous {
-	background-color: #fff;
+#mail-box .box-content .message .delete-message {
+	float: right;
 }
+
+#mail-box .box-content .message .delete-message input {
+	display: block;
+}
+
