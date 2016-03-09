@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="/public/css/main.css">
     <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/media-queries.css">
     <link rel="stylesheet" href="/public/css/tpl/home.css">
     <?php if(!isset($_SESSION['login_user'])){ ?>
         <link rel="stylesheet" href="/public/css/login.css">
@@ -23,8 +24,7 @@
 </head>
 
 <body>
-    <?php
-    if(isset($_SESSION['login_user'])){ ?>
+    <?php if(isset($_SESSION['login_user'])){ ?>
         <header id="header">
                 <div class="header-brand"></div>
                 <div class="user-informations">
@@ -45,8 +45,15 @@
                         <li><a href="javascript:void(0);" title="Événements">Événements</a></li>
                     </ul>
                 </nav>
-        </header>
-    
+                <nav id="responsive-main-nav">
+                <ul>
+                    <li><a href="javascript:void(0);" title="Accueil"><i class="fa fa-home"></i></a></li>
+                    <li><a href="javascript:void(0);" title="Messagerie"><i class="fa fa-envelope"></i></a></li>
+                    <li><a href="javascript:void(0);" title="Planning"><i class="fa fa-calendar"></i></a></li>
+                    <li><a href="javascript:void(0);" title="Planning"><i class="fa fa-bed"></i></a></li>
+                </ul>
+            </nav>
+        </header>    
 
         <div id="contenu">
             <div class="container-fluid">

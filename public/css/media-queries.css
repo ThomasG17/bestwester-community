@@ -1,0 +1,34 @@
+@media screen and (max-width: 750px) {
+
+    #header {
+        background: #003d7e;
+        width: 100px;
+    }
+
+    #header #main-nav {
+        display: none;
+    }
+
+    #header #responsive-main-nav {
+        display: block;
+    }
+
+    #header .header-brand {
+    	background: url("../../public/images/responsive-brand.jpg") center center no-repeat;
+    	background-size: 55%;
+    	height: 65px;
+    }
+
+    #header .user-informations {
+    	display: none;
+    }
+	
+	.content {
+		padding-left: 100px;
+	}
+
+	#messages .message img {
+		position: inherit;
+		width: auto;
+	}
+}

@@ -35,6 +35,16 @@ ul {
 	padding: 0;
 }
 
+textarea {
+	color: #000;
+	resize: none;
+}
+
+textarea:hover,
+textarea:focus {
+	outline: none;
+}
+
 input:hover,
 input:focus {
 	outline: none;
@@ -57,6 +67,7 @@ input:focus {
     width: auto;
     height: 74px;
     background-size: 100%;
+    margin: 0;
 }
 
 #header .user-informations {
@@ -80,28 +91,37 @@ input:focus {
 	margin-top: 10px;
 }
 
-#header #main-nav ul {
+#header #main-nav,
+#header #responsive-main-nav {
 	margin-top: 40px;
 }
 
-#header #main-nav ul li {
+#header #responsive-main-nav {
+	display: none;
+}
+
+#header #main-nav li,
+#header #responsive-main-nav li {
 	border-top: 1px solid #fff;
 	padding: 20px;
 }
 
-#header #main-nav ul li:hover {
+#header #main-nav li:hover,
+#header #responsive-main-nav li:hover {
 	background: #fff;
 }
 
-#header #main-nav ul li:hover a {
-	color: #000;
+#header #main-nav li:hover a,
+#header #responsive-main-nav li:hover a {
+	color: #003d7e;
 }
 
-#header #main-nav ul li:last-child {
+#header #main-nav li:last-child,
+#header #responsive-main-nav li:last-child {
 	border-bottom: 1px solid #fff;
 }
 
-#header #main-nav ul li a {
+#header #main-nav li a {
 	font-family: 'Quicksand', Arial, sans-serif;
 	text-transform: uppercase;
 	text-align: center;
@@ -109,8 +129,15 @@ input:focus {
 	color: #fff;
 }
 
+#header #responsive-main-nav li a {
+	font-size: 20px;
+	text-align: center;
+	display: block;
+	color: #fff;
+}
+
 .content {
-	padding-left: 285px;
+	padding-left: 300px;
 }
 
 .content #search {
@@ -125,24 +152,3 @@ input:focus {
 	padding: 2px 5px;
 }
 
-@media screen and (max-width: 750px) {
-
-    #header {
-        background: #003d7e;
-        width: 100px;
-    }
-
-    #header .header-brand {
-    	background: url("../../public/images/responsive-brand.jpg") center center no-repeat;
-    	background-size: 55%;
-    	height: 65px;
-    }
-
-    #header .user-informations {
-    	display: none;
-    }
-	
-	#content {
-		padding-left:300px;
-	}
-}
