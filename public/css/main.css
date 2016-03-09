@@ -35,6 +35,11 @@ ul {
 	padding: 0;
 }
 
+input:hover,
+input:focus {
+	outline: none;
+}
+
 /*     H E A D E R    */
 #header {
 	background: rgba(100, 100, 100, 0.8);
@@ -104,15 +109,32 @@ ul {
 	color: #fff;
 }
 
+.content {
+	padding-left: 285px;
+}
 
-@media screen and (max-width:500px) {
+.content #search {
+	margin: 20px 30px 0 0;
+}
+
+.content #search input {
+	float: right;
+	background: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+	padding: 2px 5px;
+}
+
+@media screen and (max-width: 800px) {
     #header {
         background: #003d7e;
         width: 100px;
     }
 
     #header .header-brand {
-    	height: 55px;
+    	background: url("../../public/images/responsive-brand.jpg") center center no-repeat;
+    	background-size: 55%;
+    	height: 65px;
     }
 
     #header .user-informations {

@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="/public/css/bootstrap.min.css">
-    <link href="/public/css/main.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="/public/css/main.css">
     <link rel="stylesheet" href="/public/css/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/public/css/tpl/home.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Montserrat' type='text/css'>
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Quicksand' type='text/css'>
 
     <title>Best Western Community</title>
 </head>
@@ -32,19 +36,21 @@
                     <li><a href="javascript:void(0);" title="Accueil">Accueil</a></li>
                     <li><a href="javascript:void(0);" title="Messagerie">Messagerie</a></li>
                     <li><a href="javascript:void(0);" title="Planning">Planning</a></li>
-                    <li><a href="javascript:void(0);" title="Événements">Événements</a></li>
+                    <li><a href="javascript:void(0);" title="Réservations">Réservations</a></li>
+                    <li><a href="javascript:void(0);" title="Hôtels">Hôtels</a></li>
                 </ul>
             </nav>
     </header>
 
-    <div id="content">
+    <div class="content">
         <div class="container-fluid">
-
-
-
+            <div class="row">
+                <form method="search" id="search">
+                    <input type="search" placeholder="Recherche" name="the_search">
+                </form>
+            </div>
     		<?php include $this->view;?>
         </div>
-
     </div>
     
     <script src="/public/js/jquery-2.1.3.min.js"></script>

@@ -1,0 +1,22 @@
+#messages {
+	margin-top: 20px;
+}
+
+#messages .message {
+	background: #fff;
+}
+
+#messages .message .message-content {
+	padding: 15px;
+}
+
+#messages .message .message-content p {
+	color: #000;
+}
+
+#messages .message .message-content img {
+	position: absolute;
+	top: -20px;
+	width: 90px;
+	height: 90px;
+}
