@@ -35,6 +35,11 @@ ul {
 	padding: 0;
 }
 
+input:hover,
+input:focus {
+	outline: none;
+}
+
 /*     H E A D E R    */
 #header {
 	background: rgba(100, 100, 100, 0.8);
@@ -104,68 +109,40 @@ ul {
 	color: #fff;
 }
 
-
-
-/*     V I E W    #CONTENT     */
-
-#content {
-	padding-left:300px;
+.content {
+	padding-left: 285px;
 }
 
+.content #search {
+	margin: 20px 30px 0 0;
+}
 
+.content #search input {
+	float: right;
+	background: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+	padding: 2px 5px;
+}
 
+@media screen and (max-width: 750px) {
 
-/* Smartphones (portrait et paysage) ----------- */
-@media only screen
-and (min-width : 320px)
-and (max-width : 480px) {
-	body {
-		background: yellow;
+    #header {
+        background: #003d7e;
+        width: 100px;
+    }
+
+    #header .header-brand {
+    	background: url("../../public/images/responsive-brand.jpg") center center no-repeat;
+    	background-size: 55%;
+    	height: 65px;
+    }
+
+    #header .user-informations {
+    	display: none;
+    }
+	
+	#content {
+		padding-left:300px;
 	}
-}
-/* Smartphones (paysage) ----------- */
-@media only screen
-and (min-width : 321px) {
-/* vos définitions */
-}
-/* Smartphones (portrait) ----------- */
-@media only screen
-and (max-width : 320px) {
-/* vos définitions */
-}
-/* iPad (portrait et paysage) ----------- */
-@media only screen
-and (min-width : 768px)
-and (max-width : 1024px) {
-/* vos définitions */
-}
-/* iPad (paysage) ----------- */
-@media only screen
-and (min-width : 768px)
-and (max-width : 1024px)
-and (orientation : landscape) {
-/* vos définitions */
-}
-/* iPad (portrait) ----------- */
-@media only screen
-and (min-width : 768px)
-and (max-width : 1024px)
-and (orientation : portrait) {
-/* vos définitions */
-}
-/* Bureau and portable ----------- */
-@media only screen
-and (min-width : 1224px) {
-/* vos définitions */
-}
-/* Écrans larges ----------- */
-@media only screen
-and (min-width : 1824px) {
-/* vos définitions */
-}
-/* iPhone 4 et suivants (Retina) ----------- */
-@media
-only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {
-/* vos définitions */
 }

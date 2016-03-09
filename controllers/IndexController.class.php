@@ -2,7 +2,7 @@
 class indexController{
 
 	public function indexAction($args){
-		$v = new view("indexIndex");
+		$v = new view("index");
 		$v->assign("mesargs", $args);
 	}	
 
