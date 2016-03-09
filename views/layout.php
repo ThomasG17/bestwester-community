@@ -69,10 +69,10 @@
 
                 <nav id="main-nav">
                     <ul>
-                        <li><a href="javascript:void(0);" title="Accueil">Accueil</a></li>
-                        <li><a href="javascript:void(0);" title="Messagerie">Messagerie</a></li>
-                        <li><a href="javascript:void(0);" title="Planning">Planning</a></li>
-                        <li><a href="javascript:void(0);" title="Événements">Événements</a></li>
+                        <li><a href="javascript:void(0);" title="Accueil"><i class="fa fa-home"></i> Accueil</a></li>
+                        <li><a href="javascript:void(0);" title="Messagerie"><i class="fa fa-envelope"></i> Messagerie</a></li>
+                        <li><a href="javascript:void(0);" title="Planning"><i class="fa fa-calendar"></i> Planning</a></li>
+                        <li><a href="javascript:void(0);" title="Événements"><i class="fa fa-bed"> Événements</a></li>
                     </ul>
                 </nav>
                 <nav id="responsive-main-nav">
