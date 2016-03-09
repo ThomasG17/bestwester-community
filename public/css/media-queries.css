@@ -31,4 +31,8 @@
 		position: inherit;
 		width: auto;
 	}
+
+    #map {
+        margin: 70px;
+    }
 }

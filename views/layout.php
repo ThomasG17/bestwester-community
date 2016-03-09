@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="/public/css/media-queries.css">
     <link rel="stylesheet" href="/public/css/tpl/home.css">
+    <link rel="stylesheet" href="/public/css/tpl/hostels.css">
+    <link rel="stylesheet" href="/public/css/tpl/messages.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
@@ -34,19 +36,19 @@
 
         <nav id="main-nav">
             <ul>
-                <li><a href="javascript:void(0);" title="Accueil"><i class="fa fa-home"></i> Accueil</a></li>
+                <li><a href="/index" title="Accueil"><i class="fa fa-home"></i> Accueil</a></li>
                 <li><a href="javascript:void(0);" title="Messagerie"><i class="fa fa-envelope"></i> Messagerie</a></li>
                 <li><a href="javascript:void(0);" title="Planning"><i class="fa fa-calendar"></i> Planning</a></li>
-                <li><a href="javascript:void(0);" title="Hôtels"><i class="fa fa-bed"></i> Hôtels</a></li>
+                <li><a href="/hostels" title="Hôtels"><i class="fa fa-bed"></i> Hôtels</a></li>
             </ul>
         </nav>
 
         <nav id="responsive-main-nav">
             <ul>
-                <li><a href="javascript:void(0);" title="Accueil"><i class="fa fa-home"></i></a></li>
+                <li><a href="/index" title="Accueil"><i class="fa fa-home"></i></a></li>
                 <li><a href="javascript:void(0);" title="Messagerie"><i class="fa fa-envelope"></i></a></li>
                 <li><a href="javascript:void(0);" title="Planning"><i class="fa fa-calendar"></i></a></li>
-                <li><a href="javascript:void(0);" title="Planning"><i class="fa fa-bed"></i></a></li>
+                <li><a href="/hostels" title="Planning"><i class="fa fa-bed"></i></a></li>
             </ul>
         </nav>
     </header>

@@ -1,0 +1,31 @@
+#mail-box {
+	color: #000;
+	margin: 40px 0;
+}
+
+#mail-box .message {
+	border-bottom: 1px solid #ccc;
+	padding: 15px;
+	overflow: auto;
+}
+
+#mail-box .message .mail-open {
+	background: url("/public/images/enveloppe-msg.png") 0 0 no-repeat;
+	display: block;
+	background-size: 100%;
+	text-indent: -99999px;
+	margin-top: 10px;
+	width: 30px;
+}
+
+#mail-box .message .from {
+	font-family: 'Quicksand', Arial, sans-serif;
+	color: #999;
+	font-size: 12px;
+	text-align: center;
+}
+
+#mail-box #today,
+#mail-box #previous {
+	background-color: #fff;
+}
