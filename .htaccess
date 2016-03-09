@@ -9,3 +9,4 @@ RewriteCond %{Request_URI} !/web
 
 #RewriteRule ^.*$ /index.php [L]
 RewriteRule ^(.*)$ /index.php?url=$1 [QSA,L]
+AddDefaultCharset UTF-8
