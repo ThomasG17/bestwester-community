@@ -1,0 +1,73 @@
+html,
+body {
+  height: 100%;
+  background: url("../../public/images/bg_login.png") center center fixed;
+  background-size: cover;
+}
+
+.header-brand {
+  background: url("../../public/images/brand.jpg") center center no-repeat;
+  height: 100px;
+  background-size: 100%;
+  margin-top: 4%;
+}
+
+.connection{
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 15%;
+}
+
+form{
+  margin-top: 35%;
+}
+
+.user-img{
+  height: 25px;
+}
+
+input{
+  border-radius: 8px 8px 8px 8px;
+  height: 41px;
+}
+
+input.email{
+  border-radius: 0px 8px 8px 0px;
+  border: 2px solid #003c7e;
+}
+
+input.email::-webkit-input-placeholder{
+  color: #003c7e;
+}
+
+.input-group-addon{
+  border-radius: 8px 0px 0px 8px;
+  border: 2px solid #003c7e;
+  background-color: #ffffff;
+}
+
+input.password{
+  border: 2px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+}
+
+input.password::-webkit-input-placeholder { 
+  color:#ffffff;
+}
+
+input.password, input.login{
+  margin-top: 5%;
+}
+
+a.login_link{
+  color: #ffffff;
+  margin-top: 5%;
+  text-align: right;
+  padding-right: 0;
+  text-decoration: underline;
+}
+
+a.login_link:hover{
+  text-decoration: none;
+}
