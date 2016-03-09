@@ -42,7 +42,11 @@
             </nav>
     </header>
 
+<<<<<<< HEAD
     <div class="content">
+=======
+    <div id="contenu">
+>>>>>>> cbdfd511b3f6565714c7680f7f8a1663da748dd1
         <div class="container-fluid">
             <div class="row">
                 <form method="search" id="search">
