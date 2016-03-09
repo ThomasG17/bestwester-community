@@ -105,6 +105,12 @@ ul {
 }
 
 
+/*     C O N T E N T    */
+#contenu {
+	padding-left: 300px;
+}
+
+
 @media screen and (max-width:500px) {
     #header {
         background: #003d7e;
