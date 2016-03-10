@@ -35,6 +35,6 @@ class mailController extends basesql{
       $user_MailObj->save();
     }
 
-    //header('Location: /mail/new');
+    header('Location: /mail/new');
   }
 }
