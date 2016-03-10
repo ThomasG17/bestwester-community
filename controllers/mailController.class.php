@@ -2,9 +2,20 @@
 class mailController extends basesql{
 
 	public function indexAction($args){
-		$v = new view("mail");
-		$v->assign("mesargs", $args);
-	}	
+		$this->mailAction($args);
+	}
+
+  public function mailAction($args){
+    $v = new view("mail");
+    $args['mails'] = $this->getMailByUserId($_SESSION['login_user']['id']);
+    $v->assign("mesargs", $args);
+  }
+
+  public function showAction($id){
+    $v = new view("showMail");
+    $args['mail'] = $this->getMailById(implode("", $id), "id");
+    $v->assign("mesargs", $args);
+  }
 
   public function newAction($args){
     $v = new view("addMail");

@@ -4,7 +4,7 @@
       <h1 class="col-ms-12 col-xs-12 col-sm-12">Envoyer un message</h1>
       <input type="text" id="title" name="mail_receiver" class="col-ms-12 col-xs-12 col-sm-12" placeholder="Destinataire(s)">
       <input type="text" id="title" name="title" class="col-ms-12 col-xs-12 col-sm-12" placeholder="Objet">
-      <input type="text" id="content" name="content" class="message col-ms-12 col-xs-12 col-sm-12">
+      <textarea type="text" id="content" name="content" class="message col-ms-12 col-xs-12 col-sm-12" placeholder="Message"></textarea>
       <input type="hidden" name="id_sender" value="<?php echo $_SESSION['login_user']['id'] ?>">
     </div>
     <div class="send">

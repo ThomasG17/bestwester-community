@@ -8,7 +8,7 @@ class mailModel extends basesql {
   protected $content;
   protected $id_sender;
 
-  public function __construct($id=0, $title, $content, $id_sender){
+  public function __construct($id=0, $title="", $content="", $id_sender=""){
     parent::__construct();
 
     $this->setId($id);

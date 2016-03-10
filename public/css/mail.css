@@ -1,14 +1,73 @@
-form#mail{
+form#mail, div#inside-content{
   background-color: #ffffff;
   padding: 0;
   margin-bottom: 50px;
 }
-form#mail div.field h1{
+form#mail div.field h1 {
   color: #003c7e;
   font-size: 30px;
 }
 
-form#mail div.field input{
+div.inside-field h1{
+  color: #3f3f3f;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+div.inside-field h2{
+  color: #003c7e;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+div.inside-field h3{
+  color: #3f3f3f;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+div.inside-field .mail-open {
+    background: url("/public/images/enveloppe-msg.png") 0 0 no-repeat;
+    display: block;
+    background-size: 100%;
+    text-indent: -99999px;
+    width: 35px;
+    margin-right: 10px
+}
+
+div.inside-field .trash {
+    text-align: center;
+    font-size: 26px;
+    color: #969696;
+    margin-top: 18px;
+}
+
+div.inside-field .text-mail {
+    font-size: 18px;
+    color: #333333;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+div.inside-field .reply {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+div.inside-field .left-arrow {
+  background: url("/public/images/left-arrow.png") 0 0 no-repeat;
+  background-size: 50%;
+  height: 25px;
+}
+
+div.inside-field .right-arrow {
+  background: url("/public/images/right-arrow.png") 0 0 no-repeat;
+  background-size: 50%;
+  height: 25px;
+}
+
+form#mail div.field input, form#mail div.field textarea {
   border-top: 0.5px;
   border-top-style: solid;
   border-top-color: #f4f4f4;
@@ -19,13 +78,13 @@ form#mail div.field input{
   margin: 0;
 }
 
-form#mail div.field input::-webkit-input-placeholder{
+form#mail div.field input::-webkit-input-placeholder, form#mail div.field textarea::-webkit-input-placeholder{
   color: #3f3f3f;
   font-size: 16px;
   font-weight: bold;
 }
 
-form#mail div.field input.message{
+form#mail div.field textarea.message{
   height: 150px;
 }
 
