@@ -1,4 +1,17 @@
-#map img {
-	margin: 0;
-	width: 100%;
+#map {
+	margin-bottom: 60px;
+}
+
+#map .location {
+	cursor: pointer;
+}
+
+#map #spain-map-content {
+	display: none;
+}
+
+#map #spain-map-content #hotel-salobrena,
+#map #spain-map-content #hotel-madrid,
+#map #spain-map-content #hotel-barcelone {
+	display: none;
 }
