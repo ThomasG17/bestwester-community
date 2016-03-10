@@ -12,6 +12,7 @@ class addGroupController{
     }
 
     public function insertAction($args){
+        var_dump($_SESSION["login_user"]);
         $id = -1;
         $id_user = $_SESSION['id'];
         $group = $_POST['Groupes'];
@@ -19,7 +20,6 @@ class addGroupController{
         $id_group = $this->getGroup($group)['id'];
         $addUser = new user_GroupModel($id, $id_user, $id_group);
         $addUser->save();
-
     }
 
     public function getGroupAction($groupName) {

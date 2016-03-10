@@ -16,7 +16,7 @@ class UserController extends basesql{
 
     if(empty($_POST['email']))
     {
-      $args['error']= "erreur: email non renseigné";
+      $args['error']= "Erreur: email non renseigné";
     }
 
     if(empty($_POST['password']))
@@ -31,7 +31,7 @@ class UserController extends basesql{
 
     if(!$user_login == false){
       $_SESSION['login_user'] = array(
-                                  'user_id' => $user_login['id'],
+                                  'id' => $user_login['id'],
                                   'firstname' => $user_login['firstname'],
                                   'lastname' => $user_login['lastname'],
                                   'mail' => $user_login['mail'],
@@ -44,13 +44,13 @@ class UserController extends basesql{
     $v->assign("mesargs", $args);
 
     if ($args['error'] == null) {
-      header("location: ../");
-    }
-    
+      $this->redirect("/index", "");
+    } 
   }
 
   public function logoutAction(){
     session_destroy();
-    header("location: login"); 
+    $this->redirect("/user/login", "");
   }
+
 }

@@ -5,16 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="/public/images/favicon.png" />
+    <title>Best Western Community</title>
 
     <link rel="stylesheet" href="/public/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="/public/css/main.css">
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="/public/css/media-queries.css">
     <link rel="stylesheet" href="/public/css/tpl/home.css">
-
     <link rel="stylesheet" href="/public/css/tpl/hostels.css">
     <link rel="stylesheet" href="/public/css/tpl/messages.css">
+    <link rel="stylesheet" href="/public/css/tpl/planning.css">
+
+    <link rel="stylesheet" href="/public/css/fullcalendar.css">
 
     <?php if(!isset($_SESSION['login_user'])){ ?>
         <link rel="stylesheet" href="/public/css/login.css">
@@ -25,7 +27,8 @@
     <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Montserrat' type='text/css'>
     <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Quicksand' type='text/css'>
 
-    <title>Best Western Community</title>
+    <script src="/public/js/jquery-2.1.3.min.js"></script>
+    <script src="/public/js/script.js"></script>
 </head>
 
 <body>
@@ -94,8 +97,10 @@
         }
     </script>
     
-    <script src="/public/js/jquery-2.1.3.min.js"></script>
+    
     <script src="/public/js/bootstrap.min.js"></script>
+    <script src="/public/js/moment.min.js"></script><!-- calendar use -->
+    <script src="/public/js/fullcalendar.js"></script><!-- calendar use -->
 
   </body>
 </html>

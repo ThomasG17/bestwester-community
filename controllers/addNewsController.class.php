@@ -1,6 +1,6 @@
 <?php
 
-class addNewsController extends basesql{
+class addNewsController extends basesql {
 	public function indexAction($args){
 		$v = new view("addNews");
 		$v->assign("mesargs", $args);
