@@ -71,3 +71,9 @@ a.login_link{
 a.login_link:hover{
   text-decoration: none;
 }
+
+.error{
+  color: #000000;
+  padding: 10px;
+  margin-top: 5%;
+}

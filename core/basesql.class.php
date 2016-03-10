@@ -2,7 +2,7 @@
 class basesql {
 
 	private $pdo;
-	private $connect = "mysql:host=localhost;dbname=hackaton";
+	private $connect = "mysql:host=localhost;dbname=hackathon";
 	private $user_sql = "root";
 	private $pwd_sql = "";
 	private $table;
@@ -197,8 +197,8 @@ class basesql {
 	}
 
 	// Sélection des 8 derniers utilisateurs inscrits => page d'accueil dashboard
-	public function getUserByLimit($column = "id") {
-		$sql = 'SELECT * FROM ' . $this->table.' ORDER BY ' . $column . ' ASC';
+	public function getUserByMail($mail) {
+		$sql = "SELECT * FROM user WHERE mail = '".$mail."'";
 		$query = $this->pdo->prepare($sql);
 		$query->execute();
 		$data = $query->fetchAll();

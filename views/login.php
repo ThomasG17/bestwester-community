@@ -13,8 +13,10 @@
       <input id="password" class=" password col-md-12 col-xs-12 col-sm-12"name="password" placeholder="Mot de passe" type="password">
       <input name="submit" class="login col-md-12 col-xs-12 col-sm-12 btn btn-primary" type="submit" value=" Connexion ">
       <a href="#" class="login_link col-md-12 col-xs-12 col-sm-12">Mot de passe oublié?</a>
-      <?php if(!empty($mesargs)){ ?>
-        <span><?php echo $mesargs['error']; ?></span>
+      <?php if(!empty($mesargs['error'])){ ?>
+        <div class="col-md-12 col-xs-12 col-sm-12">
+          <p class="error bg-danger"><?php echo $mesargs['error']; ?></p>
+        </div>
       <?php } ?>
     </form>
   </div>
