@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/public/css/tpl/planning.css">
 
     <link rel="stylesheet" href="/public/css/fullcalendar.css">
+    <link rel="stylesheet" href="/public/css/mail.css">
 
     <?php if(!isset($_SESSION['login_user'])){ ?>
         <link rel="stylesheet" href="/public/css/login.css">

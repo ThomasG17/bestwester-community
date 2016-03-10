@@ -25,14 +25,16 @@ class mailController extends basesql{
     //Récupérer dernière actu créée
     $lastMail = $mailObj->lastId();
 
-    $user_mail = preg_split("/[,]/", $mail);
+    $user_mail = preg_split("/[ ]/", $mail);
 
     foreach ($user_mail as $umail) {
       $userid = $this->getUserByMail($umail);
 
-      //Lier le message à un destinataire
-      $user_MailObj = new user_mailModel(-1, $lastMail, $userid[0]['id']);
-      $user_MailObj->save();
+      if (!$userid == null) {
+        //Lier le message à un destinataire
+        $user_MailObj = new user_mailModel(-1, $lastMail, $userid[0]['id']);
+        $user_MailObj->save();
+      }
     }
 
     header('Location: /mail/new');
