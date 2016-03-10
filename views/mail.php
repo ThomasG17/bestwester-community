@@ -1,4 +1,14 @@
 <div id="mail-box" class="row">
+	<div class="message-action col-md-10 col-md-offset-1">
+		<ul>
+			<li class="col-md-3 col-xs-6">
+				<a href="javascript:void(0);" title="Nouveau message">Écrire un nouveau message</a>
+			</li>
+			<li class="col-md-3 col-xs-6">
+				<a href="javascript:void(0);" title="Supprimer les messages">Supprimer les messages sélectionnés</a>
+			</li>
+		</ul>
+	</div>
 	<section id="today" class="col-md-10 col-md-offset-1">
 		<div class="messages-header">
 			<h3 class="col-md-10">Reçus aujourd'hui</h3>

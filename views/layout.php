@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/public/images/favicon.png" />
 
     <link rel="stylesheet" href="/public/css/bootstrap.min.css">
 
@@ -45,7 +46,7 @@
                 <ul>
                     <li><a href="/index" title="Accueil"><i class="fa fa-home"></i> Accueil</a></li>
                     <li><a href="/mail" title="Messagerie"><i class="fa fa-envelope"></i> Messagerie</a></li>
-                    <li><a href="javascript:void(0);" title="Planning"><i class="fa fa-calendar"></i> Planning</a></li>
+                    <li><a href="/planning" title="Planning"><i class="fa fa-calendar"></i> Planning</a></li>
                     <li><a href="/hostels" title="Hôtels"><i class="fa fa-bed"></i> Hôtels</a></li>
                 </ul>
             </nav>
@@ -54,21 +55,21 @@
                 <ul>
                     <li><a href="/index" title="Accueil"><i class="fa fa-home"></i></a></li>
                     <li><a href="/mail" title="Messagerie"><i class="fa fa-envelope"></i></a></li>
-                    <li><a href="javascript:void(0);" title="Planning"><i class="fa fa-calendar"></i></a></li>
+                    <li><a href="/planning" title="Planning"><i class="fa fa-calendar"></i></a></li>
                     <li><a href="/hostels" title="Planning"><i class="fa fa-bed"></i></a></li>
                 </ul>
             </nav>
         </header>
 
     <div class="content">
-        <div class="container-fluid">
+        <div class="content-inner container-fluid">
             <div class="row">
                 <form method="search" id="search" class="col-md-9">
                     <input type="search" placeholder="Recherche" name="the_search">
                 </form>
                 <div id="languages">
-                    <a href="/index" title="Version française"><span class="france col-md-1">France</span></a>
-                    <a href="/index?lang=en"><span class="england col-md-1">England</span></a>
+                    <a href="/index" title="Version française"><span id="french" class="language col-md-1">FR</span></a>
+                    <a href="/index?lang=en" title="Version anglaise"><span id="english" class="language col-md-1">EN</span></a>
                 </div>
             </div>
             <div class="row">
@@ -82,6 +83,16 @@
             </div>
         </div>
     <?php } ?>
+
+     <script type="text/javascript">
+        var userLang = navigator.language || navigator.userLanguage; 
+
+        if(userLang == "fr") {
+            document.getElementById("french").style.background = "#003d7e";
+            document.getElementById("french").style.border = "1px solid #003d7e";
+            document.getElementById("french").style.color = "#fff";
+        }
+    </script>
     
     <script src="/public/js/jquery-2.1.3.min.js"></script>
     <script src="/public/js/bootstrap.min.js"></script>
