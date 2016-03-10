@@ -13,7 +13,7 @@ class addGroupController{
 
     public function insertAction($args){
         $id = -1;
-        $id_user = $_SESSION['id'];
+        $id_user = $_SESSION['login_user']['user_id'];
         $group = $_POST['Groupes'];
 
         $id_group = $this->getGroup($group)['id'];

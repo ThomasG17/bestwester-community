@@ -254,6 +254,25 @@ class basesql {
 		return $data;
 	}
 
+	// Sélection des mails de l'utilisateur
+	public function getMailByUserId($id) {
+		$sql = "SELECT * FROM mail m, user_mail um, user u WHERE m.id = um.id_mail AND m.id_sender = u.id AND um.id_receiver = '".$id."' ORDER BY m.creation_date DESC";
+		$query = $this->pdo->prepare($sql);
+		$query->execute();
+		$data = $query->fetchAll();
+		return $data;
+	}
+
+	// Sélection des mail de l'utilisateur
+	public function getMailById($id) {
+		$sql = "SELECT * FROM mail m, user u WHERE m.id_sender = u.id AND m.id = '".$id."'";
+		$query = $this->pdo->prepare($sql);
+		$query->execute();
+		$data = $query->fetchAll();
+		return $data;
+	}
+
+
 	function redirect($url, $permanent = false)
 	{
     	header('Location: ' . $url, true, $permanent ? 301 : 302);
