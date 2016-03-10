@@ -8,7 +8,6 @@ class addNewsController extends basesql{
 
 	public function insertAction($args){
 
-		var_dump($_POST);
 		$title = trim($_POST['title']);
 		$content = trim($_POST['content']);
 		$id_group = $_POST['group'];
@@ -39,12 +38,12 @@ class addNewsController extends basesql{
 		$newsObj = new newsModel(-1, $title, $content, 2);
 		$newsObj->save();
 
+		//Récupérer dernière actu créée
+		$lastNews = $newsObj->lastId();
+
 		//Enregistrer l'image de l'actu
 		$imgObj = new imgModel(-1,$fichier);
 		$imgObj->save();
-
-		//Récupérer dernière actu créée
-		$lastNews = $newsObj->lastId();
 
 		$imgObj = new news_imgModel(-1, $lastNews, $fichier);
 		$imgObj->save();
