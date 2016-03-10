@@ -236,6 +236,15 @@ class basesql {
 		
 	}
 
+	// Cette méthode permet de retourner le concours sélectionné
+	public function getUserLogin($email, $password) {
+		$sql =  "SELECT * FROM user WHERE mail = '".$email."' AND password = '".$password."'";
+		$query = $this->pdo->prepare($sql);
+		$query->execute();
+		$data = $query->fetch();
+		return $data;
+	}
+
 	function redirect($url, $permanent = false)
 	{
     	header('Location: ' . $url, true, $permanent ? 301 : 302);
