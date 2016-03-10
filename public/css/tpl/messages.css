@@ -35,12 +35,12 @@
 }
 
 #mail-box .box-content .message .mail-open {
-	background: url("/public/images/enveloppe-msg.png") 0 0 no-repeat;
-	display: block;
-	background-size: 100%;
-	text-indent: -99999px;
-	margin-top: 10px;
-	width: 30px;
+    background: url("/public/images/enveloppe-msg.png") 0 0 no-repeat;
+    display: block;
+    background-size: 77%;
+    text-indent: -99999px;
+    margin-top: 10px;
+    width: 15px;
 }
 
 #mail-box .box-content .message .from {
@@ -53,6 +53,7 @@
 
 #mail-box .box-content .message .delete-message {
 	float: right;
+    padding-top: 8px;
 }
 
 #mail-box .box-content .message .delete-message input {
