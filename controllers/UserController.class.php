@@ -31,7 +31,7 @@ class UserController extends basesql{
 
     if(!$user_login == false){
       $_SESSION['login_user'] = array(
-                                  'user_id' => $user_login['id'],
+                                  'id' => $user_login['id'],
                                   'firstname' => $user_login['firstname'],
                                   'lastname' => $user_login['lastname'],
                                   'mail' => $user_login['mail'],

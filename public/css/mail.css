@@ -1,0 +1,35 @@
+form#mail{
+  background-color: #ffffff;
+  padding: 0;
+  margin-bottom: 50px;
+}
+form#mail div.field h1{
+  color: #003c7e;
+  font-size: 30px;
+}
+
+form#mail div.field input{
+  border-top: 0.5px;
+  border-top-style: solid;
+  border-top-color: #f4f4f4;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  height: 50px;
+  margin: 0;
+}
+
+form#mail div.field input::-webkit-input-placeholder{
+  color: #3f3f3f;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+form#mail div.field input.message{
+  height: 150px;
+}
+
+form#mail div.send{
+  text-align: right;
+  padding: 10px;
+}

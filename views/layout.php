@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="/public/css/tpl/hostels.css">
     <link rel="stylesheet" href="/public/css/tpl/messages.css">
+    <link rel="stylesheet" href="/public/css/mail.css">
 
     <?php if(!isset($_SESSION['login_user'])){ ?>
         <link rel="stylesheet" href="/public/css/login.css">
