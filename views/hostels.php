@@ -1,6 +1,6 @@
 <div id="map">
 	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 800 479.976" enable-background="new 0 0 800 479.976" xml:space="preserve">
-		<g id="map">
+		<g class="hostels-map">
 			<g>
 				<path fill="#FFFFFF" d="M473.742,332.429c-0.278,0.662-0.062,2.069-0.409,2.482c-1.111,1.323-3.254,4.472-4.844,5.554
 					c-2.005,1.409-4.499,1.158-4.499,5.216c0,1.328,1.045,3.4,1.045,4.312c0,0.159-1.381,3.723-1.381,3.723

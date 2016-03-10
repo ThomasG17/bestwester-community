@@ -8,7 +8,6 @@
 
 $allGroup = new groupModel();
 $allGroup->getAll(true);
-
 $id = $_SESSION['login_user']['id'];
 $allIdGroup = new user_GroupModel();
 $groups = $allIdGroup->getAllBy($id);
