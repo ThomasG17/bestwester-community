@@ -145,6 +145,7 @@ input:focus {
 
 .content {
 	padding-left: 300px;
+	margin: 0 20px;
 }
 
 .content #search {

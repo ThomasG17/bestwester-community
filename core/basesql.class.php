@@ -16,6 +16,34 @@ class basesql {
 		$this->table = str_replace("Model", "", $this->class);
 	}
 
+
+
+
+	public function getNewsByIds($ids){
+		$sql = 'SELECT id_news FROM news_group WHERE id_group = ';
+		$i = count($ids);
+
+		foreach ($ids as $id) {
+			if ($i == 1){
+				$sql = $sql . $id;
+			}
+			else {
+				$sql = $sql . $id . ' OR id_group = ';
+				$i--;
+			}
+		};
+		$sql = $this->pdo->prepare($sql);
+		$sql->execute();
+		$data = $sql->fetchAll();
+		return $data;
+
+	}
+
+	public function lastId(){
+		$lastId = $this->pdo->lastInsertId();
+		return $lastId;
+	}
+
 	//Fonction qui permet de se connecter à la base de donnée
 	public function connect() {
 		try{
@@ -102,7 +130,49 @@ class basesql {
 			//On alimente l'enfant
 			foreach ($data as $propName => $propValue)
 			{
-			    $this->$propName = $propValue;
+				$this->$propName = $propValue;
+			}
+		}
+		return $data;
+	}
+
+	// Cette méthode retourne les objets correspondant à l'ID passé en paramètre
+	public function getAllBy($id, $column = 'id_user'){
+		$sql = "SELECT * FROM `".$this->table."` WHERE `".$column."`=:".$column;
+		$query = $this->pdo->prepare($sql);
+		$query->execute([$column=>$id]);
+		//On précise que dans le retour j'aurai un format [id=1, name=skrzypczyk] ....
+		$query->setFetchMode(PDO::FETCH_ASSOC);
+		//On retourne le résultat de la requête dans la variable data sous forme de tableau
+		$data = $query->fetchAll();
+		//On vérifie que le tableau n'est pas vide
+		if(!empty($data))
+		{
+			//On alimente l'enfant
+			foreach ($data as $propName => $propValue)
+			{
+				$this->$propName = $propValue;
+			}
+		}
+		return $data;
+	}
+
+	// Cette méthode retourne les objets correspondant à l'ID passé en paramètre
+	public function getAllBy2($id, $column = 'id_user'){
+		$sql = "SELECT * FROM `".$this->table."` WHERE `".$column."`=:".$column;
+		$query = $this->pdo->prepare($sql);
+		$query->execute([$column=>$id]);
+		//On précise que dans le retour j'aurai un format [id=1, name=skrzypczyk] ....
+		$query->setFetchMode(PDO::FETCH_ASSOC);
+		//On retourne le résultat de la requête dans la variable data sous forme de tableau
+		$data = $query->fetch();
+		//On vérifie que le tableau n'est pas vide
+		if(!empty($data))
+		{
+			//On alimente l'enfant
+			foreach ($data as $propName => $propValue)
+			{
+				$this->$propName = $propValue;
 			}
 		}
 		return $data;
@@ -169,24 +239,6 @@ class basesql {
 		
 	}
 
-	//cette fonction retourne l'ensemble des concours crées (par ordre ascendant) 
-	public function getAllContest($column = "title") {
-		$sql = 'SELECT * FROM ' . $this->table.' ORDER BY ' . $column . ' ASC';
-		$query = $this->pdo->prepare($sql);
-		$query->execute();
-		$data = $query->fetchAll();
-		return $data;
-	}
-
-	// Sélection des 8 derniers concours inscrits => page d'accueil dashboard
-	public function getContestByLimit($column = "id") {
-		$sql = 'SELECT * FROM ' . $this->table.' ORDER BY ' . $column . ' ASC';
-		$query = $this->pdo->prepare($sql);
-		$query->execute();
-		$data = $query->fetchAll();
-		return $data;
-	}
-
 	// Cette méthode permet de retourner le concours sélectionné
 	public function getUserLogin($email, $password) {
 		$sql =  "SELECT * FROM user WHERE mail = '".$email."' AND password = '".$password."'";
@@ -205,27 +257,9 @@ class basesql {
 		return $data;
 	}
 
-	// Récupérer le concours actif
-	public function getActiveContest() {
-		$sql = 'SELECT * FROM contest WHERE is_active = TRUE';
-		$query = $this->pdo->prepare($sql);
-		$query->execute();
-		$data = $query->fetch();
-		return $data;
-	}
-
-	// Passe a false le concours actif
-	public function unsetActiveContest($id) {
-		$sql = "UPDATE contest SET is_active = false WHERE id = " . $id;
-		$query = $this->pdo->prepare($sql);
-		$query->execute();
-	}
-
 	function redirect($url, $permanent = false)
 	{
     	header('Location: ' . $url, true, $permanent ? 301 : 302);
     	exit();
 	}
-
-
 }
