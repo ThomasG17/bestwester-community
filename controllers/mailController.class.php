@@ -7,8 +7,8 @@ class mailController extends basesql{
 
   public function mailAction($args){
     $v = new view("mail");
-    $args['mails_read'] = $this->getMailByUserId($_SESSION['login_user']['id'], 0 );
-    $args['mails_unread'] = $this->getMailByUserId($_SESSION['login_user']['id'], 1);
+    $args['mails_read'] = $this->getMailByUserId($_SESSION['login_user']['id'], 1 );
+    $args['mails_unread'] = $this->getMailByUserId($_SESSION['login_user']['id'], 0);
     $v->assign("mesargs", $args);
   }
 
