@@ -7,14 +7,16 @@ class mailModel extends basesql {
   protected $title;
   protected $content;
   protected $id_sender;
+  protected $is_read;
 
-  public function __construct($id=0, $title="", $content="", $id_sender=""){
+  public function __construct($id=0, $title="", $content="", $id_sender="", $is_read=0){
     parent::__construct();
 
     $this->setId($id);
     $this->setTitle($title);
     $this->setContent($content);
     $this->setIdSender($id_sender);
+    $this->setIsRead($is_read);
   }
 
 
@@ -34,6 +36,10 @@ class mailModel extends basesql {
 
   public function setIdSender($id_sender){
     $this->id_sender = $id_sender;
+  }
+
+  public function setIsRead($is_read){
+    $this->is_read = $is_read;
   }
 
 

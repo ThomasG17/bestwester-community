@@ -255,12 +255,19 @@ class basesql {
 	}
 
 	// Sélection des mails de l'utilisateur
-	public function getMailByUserId($id) {
-		$sql = "SELECT * FROM mail m, user_mail um, user u WHERE m.id = um.id_mail AND m.id_sender = u.id AND um.id_receiver = '".$id."' ORDER BY m.creation_date DESC";
+	public function getMailByUserId($id, $is_active) {
+		$sql = "SELECT * FROM mail m, user_mail um, user u WHERE m.id = um.id_mail AND m.id_sender = u.id AND m.is_read = ".$is_active." AND um.id_receiver = '".$id."' ORDER BY m.creation_date DESC";
 		$query = $this->pdo->prepare($sql);
 		$query->execute();
 		$data = $query->fetchAll();
 		return $data;
+	}
+
+	// cette fonction permet de mettre à jour l'état de lecture d'un mail (true)
+	public function updateMailRead($id){
+		$sql = "UPDATE mail SET is_read = true WHERE is_read = false AND id = ".$id."";
+		$query = $this->pdo->prepare($sql);
+		$query->execute();
 	}
 
 	// Sélection des mail de l'utilisateur
