@@ -65,9 +65,12 @@ class indexController extends basesql {
 	public function commentAction($args){
 		$content = trim($_POST['comment']);
 		$id_user = $_SESSION['login_user']['id'];
+		$id_news = $_POST['test'];
 
-		$commentObj = new commentsModel(-1, $content, $id_user, 80);
+		$commentObj = new commentsModel(-1, $content, $id_user, $id_news);
 		$commentObj->save();
+
+		header('Location: /');
 	}
 
 	public function researchAction($args){
