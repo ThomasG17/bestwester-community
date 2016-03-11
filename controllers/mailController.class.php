@@ -32,9 +32,10 @@ class mailController extends basesql{
     $title = trim($_POST['title']);
     $content = trim($_POST['content']);
     $id_sender = $_POST['id_sender'];
+    $is_read = 0;
 
     //Enregistrer le message
-    $mailObj = new mailModel(-1, $title, $content, $id_sender);
+    $mailObj = new mailModel(-1, $title, $content, $id_sender, $is_read);
     $mailObj->save();
 
     //Récupérer dernière actu créée
@@ -52,6 +53,6 @@ class mailController extends basesql{
       }
     }
 
-    header('Location: /mail/new');
+    header('Location: /mail');
   }
 }
