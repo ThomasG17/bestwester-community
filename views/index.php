@@ -89,18 +89,24 @@ foreach ($OneByOneNews as $id_news) {
 
 				$allCommentsAuthor = new userModel();
 				$allCommentsAuthor->getAll(true);
-				foreach($allCommentsAuthor as $commentAuthor) {
-					$commentName = $commentAuthor['firstname'] . " " . $commentAuthor['lastname'];
-				}
+
 
 				?>
 				<div class="comment">
 				<?php foreach($allComments as $comment){
+
 					if($comment['id_news']===$images['id_news']){ ?>
 					<section class="hostel-response-informations">
+						<?php
+						foreach($allCommentsAuthor as $commentAuthor) {
+							if($commentAuthor['id']==$comment['id_user']){
+								$commentName = $commentAuthor['firstname'] . " " . $commentAuthor['lastname'];
+							}
+						}
 
+						?>
 						<p><?php echo $commentName; ?></p>
-						<p><i class="fa fa-clock-o"></i> le 08.03.2016</p>
+						<p><i class="fa fa-clock-o"></i> le 11.03.2016</p>
 					</section>
 					<section class="news-comment">
 						
@@ -115,6 +121,7 @@ foreach ($OneByOneNews as $id_news) {
 	</div>
 	<form method="post" id="comment-form" action="/index/comment">
 		<textarea type="post" placeholder="Votre commentaire..." name="comment" required></textarea>
+		<input type="hidden" name="test" value="<?php echo $images['id_news']; ?>">
 		<input type="submit" value="Envoyer" />
 	</form>
 </section>
