@@ -3,6 +3,7 @@ form#mail, div#inside-content{
   padding: 0;
   margin-bottom: 50px;
 }
+
 form#mail div.field h2 {
     font-family: 'Quicksand', Arial, sans-serif;
     color: #003d7e;

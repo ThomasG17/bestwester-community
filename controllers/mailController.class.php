@@ -7,13 +7,17 @@ class mailController extends basesql{
 
   public function mailAction($args){
     $v = new view("mail");
-    $args['mails'] = $this->getMailByUserId($_SESSION['login_user']['id']);
+    $args['mails_read'] = $this->getMailByUserId($_SESSION['login_user']['id'], 0 );
+    $args['mails_unread'] = $this->getMailByUserId($_SESSION['login_user']['id'], 1);
     $v->assign("mesargs", $args);
   }
 
   public function showAction($id){
     $v = new view("showMail");
     $args['mail'] = $this->getMailById(implode("", $id), "id");
+    if (!$args['mail'][0]['is_read'] == true ) {
+      $this->updateMailRead(implode("", $id));
+    }
     $v->assign("mesargs", $args);
   }
 
