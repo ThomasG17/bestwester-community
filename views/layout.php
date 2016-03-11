@@ -70,7 +70,6 @@
             <div class="row">
                 <form method="post" id="search" class="col-md-9" action="/index/research">
                     <input type="text" placeholder="Recherche" name="research">
-                    <input type="submit" class="btn btn-customize" value="Rechercher">
                 </form>
                 <div id="languages">
                     <a href="/index" title="Version française"><span id="french" class="language col-md-1">FR</span></a>

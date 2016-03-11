@@ -2,9 +2,9 @@
 class basesql {
 
 	private $pdo;
-	private $connect = "mysql:host=localhost;dbname=hackathon";
+	private $connect = "mysql:host=localhost;dbname=hackaton";
 	private $user_sql = "root";
-	private $pwd_sql = "";
+	private $pwd_sql = "root";
 	private $table;
 	private $class;
 
