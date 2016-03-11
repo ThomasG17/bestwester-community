@@ -11,7 +11,7 @@
         <?php echo $mesargs['mail'][0]['content']; ?>
       </p>
       <div class="reply col-md-offset-9 col-sm-offset-9 col-xs-offset-9 col-ms-3 col-xs-3 col-sm-3">
-        <a class="btn-send btn btn-primary" href="/mail/new?reply"> Répondre</a>
+        <a class="btn-send btn btn-primary" href="/mail/new"> Répondre</a>
       </div>
     </div>
   </div>
