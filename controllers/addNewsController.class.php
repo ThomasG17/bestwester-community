@@ -53,6 +53,6 @@ class addNewsController extends basesql {
 		$groupObj = new news_groupModel(-1, $lastNews, $id_group);
 		$groupObj->save();
 
-		header('Location: /addNews');
+		header('Location: /index');
 	}
 }

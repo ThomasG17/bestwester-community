@@ -3,18 +3,21 @@ form#mail, div#inside-content{
   padding: 0;
   margin-bottom: 50px;
 }
-form#mail div.field h1 {
-  color: #003c7e;
-  font-size: 30px;
+form#mail div.field h2 {
+    font-family: 'Quicksand', Arial, sans-serif;
+    color: #003d7e;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
-div.inside-field h1{
+div.inside-field h1 {
   color: #3f3f3f;
   font-size: 25px;
   font-weight: bold;
 }
 
-div.inside-field h2{
+div.inside-field h2 {
   color: #003c7e;
   font-size: 20px;
   font-weight: bold;
@@ -91,4 +94,12 @@ form#mail div.field textarea.message{
 form#mail div.send{
   text-align: right;
   padding: 10px;
+}
+
+form#mail div.send input[type="submit"] {
+    margin-top: 10px;
+    background-color: #003d7e;
+    color: #fff;
+    border: none;
+    border-radius: inherit;
 }
