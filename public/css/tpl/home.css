@@ -1,3 +1,4 @@
+
 #messages {
 	margin-top: 30px;
 }
@@ -96,6 +97,10 @@
 }
 
 /* COMMENTS */
+.comment {
+	margin-top: 15px;
+}
+
 #messages .message #comments {
     border-top: 1px solid #999;
     clear: both;
@@ -143,6 +148,12 @@
 	border: none;
 }
 
+#messages #author {
+	font-size: 10px;
+	margin-bottom: 8px;
+	font-weight: bold;
+}
 
-
-
+.hostel-response-informations {
+	margin-top: 13px;
+}

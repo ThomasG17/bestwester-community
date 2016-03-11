@@ -60,4 +60,30 @@ class indexController extends basesql {
 		header('Location: /index');
 	}	
 
-}
+
+
+	public function commentAction($args){
+		$content = trim($_POST['comment']);
+		$id_user = $_SESSION['login_user']['id'];
+
+		$commentObj = new commentsModel(-1, $content, $id_user, 80);
+		$commentObj->save();
+	}
+
+	public function researchAction($args){
+		$research = $_POST['research'];
+		$bdd = mysqli_connect("localhost", "root", "", "hackathon");
+		if (mysqli_connect_errno())
+		  {
+		  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+		  }
+
+
+		$sql = "SELECT * FROM user, news n, comments c WHERE (title = $research) OR (c.content = $research) or (n.content = $research)";
+		var_dump($sql);
+
+		mysqli_query($bdd ,$sql) or die('SQL Error');
+
+	}
+
+}	
